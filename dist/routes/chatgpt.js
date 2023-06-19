@@ -1,7 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
 const express_1 = require("express");
+const validateToken_1 = require("../middlewares/validateToken");
+const chatgpt_1 = require("../controllers/chatgpt");
+const validatePrompt_1 = require("../middlewares/validatePrompt");
 const router = (0, express_1.Router)();
-router.post("/");
-router.get("/:id");
-router.get("/user/:id");
+exports.router = router;
+router.post("/:id", validateToken_1.validateToken, validatePrompt_1.validatePrompt, chatgpt_1.saveChat);
+router.get("/:id", validateToken_1.validateToken, chatgpt_1.getChat);
+router.get("/user/:id", validateToken_1.validateToken, chatgpt_1.getChats);

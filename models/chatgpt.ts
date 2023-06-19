@@ -4,8 +4,7 @@ const ChatgptSchema:Schema = new Schema({
     prompt: String,
     response: String,
     id_user: String,
-    date_create: Date
+    createAt: Date
 });
 
-const chatgptModel = model("chatgpt", ChatgptSchema)
-export {chatgptModel}
+export const ChatgptModel = model("chatgpt", ChatgptSchema)
