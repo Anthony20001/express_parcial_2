@@ -1,7 +1,7 @@
 import {Schema, model} from "mongoose"
 
 const ChatgptSchema:Schema = new Schema({
-    prompt: String,
+    "prompt": String,
     response: String,
     id_user: String,
     createAt: Date

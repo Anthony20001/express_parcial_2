@@ -56,7 +56,8 @@ const saveChat = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         chatgptDocument.save();
         if (!chatgptDocument)
             return res.status(500).json((0, request_1.requestReturn)('ko', '', { status: 500, 'message': 'Lamentablemente, no ha sido posible guardar el registro.' }));
-        return res.status(200).json((0, request_1.requestReturn)('ok', 'El registro ha sido guardado exitosamente'));
+        //return res.status(200).json(requestReturn('ok', 'El registro ha sido guardado exitosamente'))
+        return res.status(200).json((0, request_1.requestReturn)('ok', response));
     }
     catch (e) {
         return res.status(500).json((0, request_1.requestReturn)("ko", '', { status: 500, "message": request_1.msg500 }));

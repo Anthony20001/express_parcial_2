@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ChatgptModel = void 0;
 const mongoose_1 = require("mongoose");
 const ChatgptSchema = new mongoose_1.Schema({
-    prompt: String,
+    "prompt": String,
     response: String,
     id_user: String,
     createAt: Date

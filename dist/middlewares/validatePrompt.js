@@ -7,6 +7,7 @@ const validatePrompt = (req, res, next) => {
         const { prompt } = req.body;
         if (prompt.toString().length < 10)
             return res.status(500).json((0, request_1.requestReturn)('ko', '', { status: 400, 'message': 'La pregunta no cumple con la cantidad de caracterés.' }));
+        next();
     }
     catch (e) {
         return res.status(500).json((0, request_1.requestReturn)("ko", '', { status: 500, "message": request_1.msg500 }));

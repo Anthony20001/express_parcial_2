@@ -42,4 +42,4 @@ app.use(regAccess_1.regAccess);
 app.use(apiV + "/user", users_1.router);
 app.use(apiV + "/chatgpt", chatgpt_1.router);
 app.get(apiV + '/', (req, res) => res.send('Express + TypeScript'));
-app.listen(port, () => console.log(`⚡️[server]: Server is running at http://localhost:${port}`));
+app.listen(port, () => console.log(`⚡️ [server]: Server is running at http://localhost:${port}`));

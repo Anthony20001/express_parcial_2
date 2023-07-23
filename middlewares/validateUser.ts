@@ -3,7 +3,6 @@ import {requestReturn} from "../utils/request";
 import {UserModel} from "../models/user";
 
 export const validateUser = async (req:Request, res: Response, next:NextFunction) => {
-    console.log(req.body)
     const {user, password, name} = req.body
 
     if(!user) return res.status(400).json(error('El campo usuario es requerido.'))

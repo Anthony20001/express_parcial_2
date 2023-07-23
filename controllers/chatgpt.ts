@@ -2,7 +2,6 @@ import {Request, Response} from "express";
 import {Configuration, OpenAIApi} from "openai"
 import {ChatgptModel} from "../models/chatgpt"
 import {msg500, requestReturn} from "../utils/request";
-import {UserModel} from "../models/user";
 
 const getChat = async (req: Request, res: Response) => {
     try {
@@ -48,7 +47,8 @@ const saveChat = async (req: Request, res: Response) => {
         const chatgptDocument = await new ChatgptModel({prompt, response, id_user, createAt})
         chatgptDocument.save()
         if(!chatgptDocument) return res.status(500).json(requestReturn('ko', '', {status:500, 'message': 'Lamentablemente, no ha sido posible guardar el registro.'}))
-        return res.status(200).json(requestReturn('ok', 'El registro ha sido guardado exitosamente'))
+        //return res.status(200).json(requestReturn('ok', 'El registro ha sido guardado exitosamente'))
+        return res.status(200).json(requestReturn('ok', response))
     }catch (e) {
         return res.status(500).json(requestReturn("ko", '', {status: 500, "message": msg500}))
     }

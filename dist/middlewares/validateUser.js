@@ -13,7 +13,6 @@ exports.validateUser = void 0;
 const request_1 = require("../utils/request");
 const user_1 = require("../models/user");
 const validateUser = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log(req.body);
     const { user, password, name } = req.body;
     if (!user)
         return res.status(400).json(error('El campo usuario es requerido.'));
